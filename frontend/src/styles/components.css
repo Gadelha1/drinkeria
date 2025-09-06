@@ -13,7 +13,17 @@
 
 /* Modal Content Styles */
 .selection-group {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.selection-group-horizontal{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
 }
 
 .selection-group h4 {
@@ -45,4 +55,12 @@
   font-size: var(--price-font-size);
   color: var(--price-color);
   text-align: center;
+}
+
+.centered-input {
+  width: 40px !important;
+}
+
+.centered-input .ant-input-number-input {
+  text-align: center !important;
 }

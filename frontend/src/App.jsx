@@ -1,32 +1,28 @@
 import { useState } from 'react';
 import DrinkCard from './components/card/drinkCard'
-import CaipirinhaSel from './components/modais/caipirinha/caipirinhaModal';
-import ReadyDrinkSel from './components/modais/drinks/drinksModal';
-import CustomModal from './components/modais/custom/customModal';
+import { Caipirinha, DrinkPronto, CustomModal } from './components/modais/modaisIndex';
 import { drinkTypes } from './data/drinks';
 import './styles/index.css';
 
 function App() {
-  // Estado para controlar abertura/fechamento do modal
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // Estado para armazenar dados do modal (conteúdo + título)
+  
   const [modalContent, setModalContent] = useState(null);
 
   /**
-   * Função para abrir modal com conteúdo específico
    * @param {string} modalType - Tipo do modal ('customizable' ou 'simple')
    * @param {object} data - Dados do drink selecionado
    */
   const openModal = (modalType, data) => {
+    
     let content;
     
-    // Switch para decidir qual componente renderizar baseado no tipo
     switch(modalType) {
       case 'customizable':
-        content = <CaipirinhaSel data={data} />;
+        content = <Caipirinha data={data} />;
         break;
       case 'simple':
-        content = <ReadyDrinkSel data={data} />;
+        content = <DrinkPronto data={data} />;
         break;
       default:
         content = <div>Conteúdo não encontrado</div>;
@@ -58,7 +54,7 @@ function App() {
           
           {/* Card de Drinks Prontos (simples) */}
           <DrinkCard 
-            data={drinkTypes.ready} 
+            data={drinkTypes.caicara} 
             onClick={openModal} 
           />
         </div>

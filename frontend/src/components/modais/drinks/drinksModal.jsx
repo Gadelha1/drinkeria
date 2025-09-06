@@ -4,7 +4,7 @@ import { Card, Radio, Button, Divider } from 'antd';
  * Componente para drinks prontos
  * Permite apenas escolher o recipiente
  */
-const ReadyDrinkSel = ({ data }) => {
+const DrinkPronto = ({ data }) => {
   return (
     <div className="ready-drink-selector">
       <Card size="small" title="🍸 Drink Pronto">
@@ -39,4 +39,4 @@ const ReadyDrinkSel = ({ data }) => {
   );
 };
 
-export default ReadyDrinkSel;
+export default DrinkPronto;

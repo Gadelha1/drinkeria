@@ -1,11 +1,5 @@
-/* =============================================================================
-   MAIN CSS INDEX - IMPORTS ALL STYLES
-   ============================================================================= */
-
-/* CSS Custom Properties (Variables) */
 @import './variables.css';
 
-/* Component Styles */
 @import './components.css';
 
 /* Reset and Global Styles */

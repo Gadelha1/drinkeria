@@ -5,7 +5,7 @@ export const drinkTypes = {
         price: "R$ 15,00",
         modalType: "customizable"
     },
-    ready: {
+    caicara: {
         title: "Drinks Prontos",
         description: "Drinks clássicos e especiais, prontos para servir.",
         price: "R$ 12,00",
