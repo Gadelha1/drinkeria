@@ -1,0 +1,48 @@
+.drinks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--cards-grid-gap);
+    padding: var(--cards-container-padding);
+}
+
+.drink-card {
+  width: var(--drink-card-small-width) !important;
+  max-width: var(--drink-card-small-width) !important;
+}
+
+/* Modal Content Styles */
+.selection-group {
+  margin-bottom: 16px;
+}
+
+.selection-group h4 {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.caipirinha-customizer .ant-card-head-title {
+  text-align: center;
+}
+
+.ready-drink-selector .ant-card-head-title {
+  text-align: center;
+}
+
+.drink-card__image-placeholder {
+  height: var(--drink-card-image-height);
+  background-color: var(--placeholder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--placeholder-text);
+  font-size: 16px;
+}
+
+.drink-card__price {
+  font-weight: var(--price-font-weight);
+  font-size: var(--price-font-size);
+  color: var(--price-color);
+  text-align: center;
+}
