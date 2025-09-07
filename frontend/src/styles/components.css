@@ -1,3 +1,55 @@
+/* Header Styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--header-bg);
+  box-shadow: var(--header-shadow);
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-top-height);
+  padding: var(--header-padding);
+}
+
+.logo-section h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.cart-section {
+  /* Espaço reservado para botão do carrinho */
+  width: 40px;
+  height: 40px;
+}
+
+.main-navigation {
+  height: var(--header-nav-height);
+  border-top: 1px solid #f0f0f0;
+}
+
+.main-navigation .ant-tabs {
+  height: 100%;
+}
+
+.main-navigation .ant-tabs-content-holder {
+  display: none; /* Esconde o conteúdo das abas */
+}
+
+/* Main Content */
+.main-content {
+  padding-top: var(--content-padding-top);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Drinks Grid */
 .drinks-grid {
     display: flex;
     flex-wrap: wrap;
@@ -63,4 +115,34 @@
 
 .centered-input .ant-input-number-input {
   text-align: center !important;
+}
+
+/* Header Styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--header-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--logo-section-height);
+  padding: 0 20px;
+}
+
+.main-navigation {
+  height: var(--nav-height);
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Ajustar conteúdo principal */
+.app__container {
+  padding-top: var(--content-padding-top);
 }

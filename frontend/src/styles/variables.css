@@ -20,4 +20,14 @@
     /* Responsive Card Width */
     --drink-card-width: 100%;
     --drink-card-max-width: 180px; 
+
+    /* Header */
+    --header-height: 120px;
+    --header-bg: #ffffff;
+    --nav-height: 50px;
+    --logo-section-height: 70px;
+
+    /* Layout */
+    --container-max-width: 100vw;
+    --content-padding-top: var(--header-height);
 }
