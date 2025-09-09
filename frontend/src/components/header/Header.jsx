@@ -1,5 +1,6 @@
 import Navigation from "./Navigation";
 
+
 const Header = ({ activeTab, onChange, tabsData }) => {
     return (
         <header className="main-header">

@@ -1,5 +1,5 @@
-import DrinkCard from '../card/drinkCard';
-import { drinkTypes } from '../../data/drinks';
+import DrinkCard from '../card/Card';
+import { drinkTypes } from '../../data/Drinks';
 
 const MainContent = ({ activeTab, onOpenModal }) => {
   
