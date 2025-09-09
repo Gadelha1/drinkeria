@@ -1,46 +1,49 @@
-import { useState } from "react";
 import Header from "../header/Header";
 import MainContent from "./MainContent";
 import { tabsData } from "../../data/TabsData";
 import ModalManager from "../modais/ModalManager";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveTab } from "../../store/TabSlice";
+import { closeModal, openModal } from "../../store/ModalSlice";
 
 function MainLayout() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
-  const [activeTab, setActiveTab] = useState('drinks');
+  const dispatch = useDispatch();
+  const isModalOpen = useSelector((state) => state.modal.isOpen);
+  const modalContent = useSelector((state) => state.modal.content);
+  const activeTab = useSelector((state) => state.tab.activeTab);
 
   const handleTabChange = (key) => {
-    setActiveTab(key);
-  };
-  
-  const openModal = (modalType, data) => {
-    setModalContent({ modalType, data, title: data.title });
-    setIsModalOpen(true);
+    dispatch(setActiveTab(key));
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalContent(null);
+  const openModalHandler = (modalType, data) => {
+    dispatch(openModal({ 
+        modalType, 
+        data, 
+        title: data.title 
+    }));
+  };
+
+  const closeModalHandler = () => {
+    dispatch(closeModal());
   };
 
   return (
     <div className="app">
       <Header 
-        activeTab={activeTab}
-        onChange={handleTabChange}
-        tabsData={tabsData}
-      />
-      
+      activeTab={activeTab} 
+      onChange={handleTabChange} 
+      tabsData={tabsData} />
+
       <MainContent 
-        activeTab={activeTab}
-        onOpenModal={openModal}
-      />
+      activeTab={activeTab} 
+      onOpenModal={openModalHandler} />
+
+      <ModalManager 
+      isOpen={isModalOpen} 
+      content={modalContent} 
+      onClose={closeModalHandler} />
       
-      <ModalManager
-        isOpen={isModalOpen}
-        content={modalContent}
-        onClose={closeModal}
-      />
     </div>
   );
 }
