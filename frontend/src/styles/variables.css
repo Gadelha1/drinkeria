@@ -30,4 +30,15 @@
     /* Layout */
     --container-max-width: 100vw;
     --content-padding-top: var(--header-height);
+
+    /* Full Card */
+    --full-card-width: 100vw;
+    --full-card-height: 100vh;
+    --full-card-padding: 24px;
+    --full-card-radius: 0;
+    --full-card-title-size: 2rem;
+    --full-card-description-size: 1.1rem;
+    --full-card-price-size: 1.3rem;
+    --full-card-btn-margin: 32px 0 0 0;
+    --full-card-img-height: 180px;
 }

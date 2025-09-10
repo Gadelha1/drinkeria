@@ -25,17 +25,6 @@ const Caipirinha = ({ data }) => {
 
         <Divider />
 
-        {/* Seleção do Recipiente */}
-        <div className="selection-group">
-          <h4>Recipiente:</h4>
-          <Radio.Group defaultValue="copo">
-            <Radio value="copo">🥃 Copo</Radio>
-            <Radio value="taca">🍷 Taça</Radio>
-          </Radio.Group>
-        </div>
-
-        <Divider />
-
         <div className="selection-group-selects">
           <h4>Escolha a Fruta:</h4>
           <Select
@@ -58,9 +47,8 @@ const Caipirinha = ({ data }) => {
             style={{ width: '50%' }}
             allowClear
             options={[
-              { value: 'picole-frutas', label: '🍭 Picolé de Frutas Vermelhas' },
-              { value: 'gelo-melancia', label: '🧊 Gelo de Melancia' },
-              { value: 'canela', label: '🍂 Canela' },
+              { value: 'picole', label: '🍭 Picolé de Frutas Vermelhas' },
+              { value: 'hortela', label: '🍂 Hortelã' },
             ]}
           />
         </div>

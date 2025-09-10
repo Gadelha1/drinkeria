@@ -101,5 +101,7 @@ pids/
 *.seed
 *.pid.lock
 
+/.github/
+
 # Local documentation (keep local only)
 docs/

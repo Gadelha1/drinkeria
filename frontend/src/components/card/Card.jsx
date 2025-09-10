@@ -12,7 +12,7 @@ const DrinkCard = ({ data, onClick }) => (
       </div>
     }
     actions={[
-      <div key="price" className="drink-card__price">
+      <div key="price" className="drink-card-price">
         {data.price}
       </div>
     ]}

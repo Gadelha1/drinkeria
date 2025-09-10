@@ -1,5 +1,6 @@
-import { CustomModal } from "./ModaisIndex";
+import { Caicara, CustomModal } from "./ModaisIndex";
 import { Caipirinha, DrinkPronto } from "./ModaisIndex";
+
 
 function ModalManager({ isOpen, content, onClose }) {
     if (!content) return null;
@@ -8,6 +9,10 @@ function ModalManager({ isOpen, content, onClose }) {
     switch (content.modalType) {
         case 'customizable':
             modalContent = <Caipirinha 
+            data={content.data} />;
+            break;
+        case 'caicara':
+            modalContent = <Caicara 
             data={content.data} />;
             break;
         case 'simple':
