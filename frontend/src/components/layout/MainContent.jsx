@@ -1,6 +1,6 @@
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
-import { drinkTypes } from '../../data/Drinks';
+import { caicaraDrinks, drinkTypes } from '../../data/Drinks';
 
 const getDrinksForTab = (tab) => {
   switch(tab) {
@@ -9,7 +9,7 @@ const getDrinksForTab = (tab) => {
     case 'caipirinhas':
       return [drinkTypes.caipirinha];
     case 'caicara':
-      return [drinkTypes.caicara];
+      return caicaraDrinks;
     default:
       return [];
   }
@@ -33,7 +33,6 @@ const MainContent = ({ activeTab, onOpenModal }) => {
             className={activeTab === 'drinks' ? '' : 'full-card-list-item'}
             key={drink.title}
           >
-            {/* Usa DrinkCard para drinks prontos, FullCard para os outros */}
             {activeTab === 'drinks' ? (
               <DrinkCard data={drink} onClick={onOpenModal} />
             ) : (
