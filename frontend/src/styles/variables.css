@@ -33,7 +33,7 @@
 
     /* Full Card */
     --full-card-width: 100vw;
-    --full-card-height: 100vh;
+    --full-card-height: 60vh;
     --full-card-padding: 24px;
     --full-card-radius: 0;
     --full-card-title-size: 2rem;

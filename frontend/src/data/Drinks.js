@@ -1,17 +1,31 @@
+import lemonImg from '../assets/drinks/lemon.jpeg';
+import gorilaGlueImg from '../assets/drinks/gorilaGlue.jpeg';
+import gold24k from '../assets/drinks/24k.jpeg';
+
 export const caicaraDrinks = [
   {
     title: "Caiçara OG",
     description: "Drink inspirado na OG Kush, refrescante e herbal.",
-    price: "R$ 18,00",
+    price: "R$ 20,00",
     modalType: "caicara",
-    ingredientes: ["Cachaça", "Limão", "Açúcar", "Gelo"]
+    ingredientes: ["Cachaça", "Limão", "Açúcar", "Gelo"],
+    img: gorilaGlueImg
   },
   {
     title: "Caiçara Lemon",
     description: "Notas cítricas e aroma marcante.",
-    price: "R$ 19,00",
+    price: "R$ 20,00",
     modalType: "caicara",
-    ingredientes: ["Vodka", "Limão Siciliano", "Açúcar", "Gelo"]
+    ingredientes: ["Vodka", "Limão Siciliano", "Açúcar", "Gelo"],
+    img: lemonImg
+  },
+  {
+    title: "Caiçara Pineaple Express",
+    description: "Potência e sabor intenso.",
+    price: "R$ 20,00",
+    modalType: "caicara",
+    ingredientes: ["Cachaça", "Hortelã", "Abacaxi", "Gelo"],
+    img: gold24k
   },
   
 ];
