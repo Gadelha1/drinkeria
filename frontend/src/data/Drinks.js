@@ -40,8 +40,29 @@ export const drinkTypes = {
     drinksProntos: {
         title: "Drinks Prontos",
         description: "Drinks clássicos e especiais, prontos para servir.",
-        price: "R$ 12,00",
+        price: "A partir de R$ 12,00",
         modalType: "simple"
-    }
-};
-export const personalizaveis = [drinkTypes.caipirinha, drinkTypes.caicara, drinkTypes.drinksProntos];
+    },
+}
+
+export const drinksProntos = [
+  {
+    title: "Mojito",
+    description: "Rum, hortelã, açúcar, limão e água com gás.",
+    price: "R$ 18,00",
+    modalType: "simple"
+  },
+  {
+    title: "Margerita",
+    description: "Tequila, suco de limão e licor de laranja.",
+    price: "R$ 20,00",
+    modalType: "simple"
+  },
+  {
+    title: "Cosmopolitan",
+    description: "Vodka, licor de laranja, suco de cranberry e suco de limão.",
+    price: "R$ 22,00",
+    modalType: "simple"
+  }
+];
+export const personalizaveis = [drinkTypes.caipirinha, drinkTypes.drinksProntos, drinkTypes.Mojito, drinkTypes.Margarita, drinkTypes.Cosmopolitan ];

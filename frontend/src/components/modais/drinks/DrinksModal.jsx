@@ -16,17 +16,6 @@ const DrinkPronto = ({ data }) => {
 
         <Divider />
 
-        {/* Seleção do Recipiente */}
-        <div className="selection-group">
-          <h4>Escolha o Recipiente:</h4>
-          <Radio.Group defaultValue="copo">
-            <Radio value="copo">🥃 Copo</Radio>
-            <Radio value="taca">🍷 Taça</Radio>
-          </Radio.Group>
-        </div>
-
-        <Divider />
-
         <div style={{ textAlign: 'center' }}>
           <h3>Total: {data.price}</h3>
           <Button type="primary" size="large">

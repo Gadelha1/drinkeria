@@ -4,8 +4,6 @@ const FullCard = ({ data, onSelect }) => {
     return (
       <Card
         className="full-card full-card-bg"
-        bodyStyle={{ padding: 0, background: "transparent" }}
-        style={{ background: "transparent", boxShadow: "none", border: "none" }}
       >
         <div
           className="full-card-bg-image"

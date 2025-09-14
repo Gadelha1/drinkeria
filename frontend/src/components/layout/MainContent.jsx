@@ -1,11 +1,11 @@
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
-import { caicaraDrinks, drinkTypes } from '../../data/Drinks';
+import { caicaraDrinks, drinksProntos, drinkTypes } from '../../data/Drinks';
 
 const getDrinksForTab = (tab) => {
   switch(tab) {
     case 'drinks':
-      return [drinkTypes.drinksProntos];
+      return drinksProntos;
     case 'caipirinhas':
       return [drinkTypes.caipirinha];
     case 'caicara':

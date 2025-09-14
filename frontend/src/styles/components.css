@@ -207,6 +207,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  box-shadow: none;
+  border: none
 }
 
 .full-card-bg-image {
