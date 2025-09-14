@@ -1,6 +1,8 @@
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
 import { caicaraDrinks, drinksProntos, drinkTypes } from '../../data/Drinks';
+import DrinksCarousel from '../carousel/Carousel';
+
 
 const getDrinksForTab = (tab) => {
   switch(tab) {
@@ -27,21 +29,32 @@ const MainContent = ({ activeTab, onOpenModal }) => {
 
   return (
     <main className="main-content">
-      <div className={containerClass}>
-        {drinks.map((drink) => (
-          <div
-            className={activeTab === 'drinks' ? '' : 'full-card-list-item'}
-            key={drink.title}
-          >
-            {activeTab === 'drinks' ? (
-              <DrinkCard data={drink} onClick={onOpenModal} />
-            ) : (
-              <FullCard data={drink} onSelect={onOpenModal} />
-            )}
+      {activeTab === 'drinks' ? (
+        <section className="drinks-section">
+          <h3>Opções de Copão</h3>
+          <div className="drinks-carousel-wrapper">
+            <DrinksCarousel>
+              {drinksProntos.map((drink) => (
+                <div key={drink.title} className="carousel-slide">
+                    <DrinkCard data={drink} onClick={onOpenModal} />
+                  </div>
+                
+              ))}
+            </DrinksCarousel>
           </div>
-        ))}
-      </div>
-      
+        </section>
+      ) : (
+        <div className={containerClass}>
+          {drinks.map((drink) => (
+            <div
+              className={activeTab === 'drinks' ? '' : 'full-card-list-item'}
+              key={drink.title}
+            >
+              <FullCard data={drink} onSelect={onOpenModal} />
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 };

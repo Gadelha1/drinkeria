@@ -51,16 +51,19 @@
 
 /* Drinks Grid */
 .drinks-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: var(--cards-grid-gap);
-    padding: var(--cards-container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 12px;
 }
 
 .drink-card {
-  width: var(--drink-card-small-width) !important;
-  max-width: var(--drink-card-small-width) !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  margin: 0 auto;
 }
 
 /* Modal Content Styles */
@@ -266,4 +269,8 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+.drinks-section {
+  padding: 5px;
 }

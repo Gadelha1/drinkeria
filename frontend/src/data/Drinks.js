@@ -47,20 +47,20 @@ export const drinkTypes = {
 
 export const drinksProntos = [
   {
-    title: "Mojito",
-    description: "Rum, hortelã, açúcar, limão e água com gás.",
-    price: "R$ 18,00",
-    modalType: "simple"
-  },
-  {
-    title: "Margerita",
-    description: "Tequila, suco de limão e licor de laranja.",
+    title: "Copão Vodka",
+    description: "700ml Vodka e energético.",
     price: "R$ 20,00",
     modalType: "simple"
   },
   {
-    title: "Cosmopolitan",
-    description: "Vodka, licor de laranja, suco de cranberry e suco de limão.",
+    title: "Copão Whisky",
+    description: "700ml Whisky e energético.",
+    price: "R$ 25,00",
+    modalType: "simple"
+  },
+  {
+    title: "Copão Gin",
+    description: "700ml Gin e água tônica.",
     price: "R$ 22,00",
     modalType: "simple"
   }
