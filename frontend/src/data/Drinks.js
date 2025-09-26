@@ -30,6 +30,27 @@ export const caicaraDrinks = [
   
 ];
 
+export const caipirinhas = [
+  {
+    title: "Caipirinha Clássica",
+    description: "Cachaça, limão, açúcar e gelo.",
+    price: "R$ 20,00",
+    modalType: "simple"
+  },
+  {
+    title: "Caipirinha de Morango",
+    description: "Cachaça, morango, açúcar e gelo.",
+    price: "R$ 20,00",
+    modalType: "simple"
+  },
+  {
+    title: "Caipirinha de Kiwi",
+    description: "Cachaça, kiwi, açúcar e gelo.",
+    price: "R$ 20,00",
+    modalType: "simple"
+  }
+]
+
 export const drinkTypes = {
     caipirinha: {
         title: "Caipirinha",
@@ -65,4 +86,4 @@ export const drinksProntos = [
     modalType: "simple"
   }
 ];
-export const personalizaveis = [drinkTypes.caipirinha, drinkTypes.drinksProntos, drinkTypes.Mojito, drinkTypes.Margarita, drinkTypes.Cosmopolitan ];
+export const personalizaveis = [drinkTypes.caipirinha, drinkTypes.drinksProntos, caipirinhas ];
