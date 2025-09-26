@@ -1,11 +1,10 @@
 import { Card } from 'antd';
 const { Meta } = Card;
 
-const DrinkCard = ({ data, onClick }) => (
+const DrinkCard = ({ data }) => (
   <Card
     hoverable
     className="drink-card"
-    onClick={() => onClick(data.modalType, data)}
     cover={
       <div className="drink-card__image-placeholder">
         {data.title}
