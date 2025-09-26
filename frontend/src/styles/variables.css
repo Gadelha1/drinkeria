@@ -31,6 +31,8 @@
     /* Layout */
     --container-max-width: 100vw;
     --content-padding-top: var(--header-height);
+    /* App max width for desktop/mobile-lock */
+    --app-max-width: 430px;
 
     /* Full Card */
     --full-card-width: 100vw;

@@ -50,7 +50,7 @@
 /* Main Content */
 .main-content {
   padding-top: var(--content-padding-top);
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   background-color: azure;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .full-card-list {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
@@ -281,6 +281,25 @@
 .drinks-section {
   padding: 5px;
   min-height: calc(100dvh - var(--header-height));
+}
+
+/* Mobile-first: em telas largas, centraliza e limita a largura ao tamanho mobile */
+.app,
+.main-content,
+.full-card-list,
+.drinks-section {
+  max-width: var(--app-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header fixo também acompanha a largura máxima quando viewport for maior */
+@media (min-width: 768px) {
+  .main-header {
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--app-max-width);
+  }
 }
 
 /* Carousel: somente cores e remoção de duplicatas nas setas */

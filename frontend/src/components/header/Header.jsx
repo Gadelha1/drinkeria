@@ -7,7 +7,7 @@ const Header = ({ activeTab, onChange, tabsData }) => {
             {/* Seção Superior: Logo + Espaço para Carrinho */}
             <div className="header-top">
                 <div className="logo-section">
-                    <h1>Caiçara Headshop</h1>
+                    <h1>Caiçara Drinks</h1>
                 </div>
                 <div className="cart-section">
                     {/* Espaço reservado para botão do carrinho */}
