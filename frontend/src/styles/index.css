@@ -1,5 +1,6 @@
 @import './variables.css';
-
+@import '../layout/components/header/style/header.css';
+@import '../layout/components/tabs/style/tabs.css';
 @import './components.css';
 
 /* Reset and Global Styles */
@@ -19,4 +20,7 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
+  color: var(--header-main-text-color);
+  --header-height: 64px;
+  --tabs-height: 48px;
 }

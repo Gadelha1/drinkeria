@@ -1,6 +1,6 @@
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
-import { caicaraDrinks, caipirinhas, drinksProntos } from '../../data/Drinks';
+import { caicaraDrinks, caipirinhas, drinksProntos } from '../../../data/Drinks';
 import DrinksCarousel from '../carousel/Carousel';
 import React, { useEffect, useRef } from 'react';
 

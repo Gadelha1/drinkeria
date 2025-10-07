@@ -1,20 +1,17 @@
-import Header from "../header/Header";
-import MainContent from "./MainContent";
-import { tabsData } from "../../data/TabsData";
-import ModalManager from "../modais/ModalManager";
+import Header from "./components/header/Header";
+import MainContent from "./components/content/MainContent";
+import ModalManager from "./components/modais/ModalManager";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveTab } from "../../store/TabSlice";
-import { closeModal, openModal } from "../../store/ModalSlice";
+import { closeModal, openModal } from "../store/ModalSlice";
+import { Layout } from "antd";
+import Tabs from "./components/tabs/Tabs";
+import tabsData from "./components/tabs/data/TabsData";
 
 function MainLayout() {
   const dispatch = useDispatch();
   const isModalOpen = useSelector((state) => state.modal.isOpen);
   const modalContent = useSelector((state) => state.modal.content);
   const activeTab = useSelector((state) => state.tab.activeTab);
-
-  const handleTabChange = (key) => {
-    dispatch(setActiveTab(key));
-  };
 
   const openModalHandler = (modalType, data) => {
     dispatch(openModal({ 
@@ -29,11 +26,9 @@ function MainLayout() {
   };
 
   return (
-    <div className="app">
-      <Header 
-      activeTab={activeTab} 
-      onChange={handleTabChange} 
-      tabsData={tabsData} />
+      <Layout>
+        <Header />
+        <Tabs tabsData={tabsData} />
 
       <MainContent 
       activeTab={activeTab} 
@@ -43,8 +38,7 @@ function MainLayout() {
       isOpen={isModalOpen} 
       content={modalContent} 
       onClose={closeModalHandler} />
-      
-    </div>
+      </Layout>
   );
 }
 

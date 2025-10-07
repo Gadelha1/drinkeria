@@ -1,5 +1,4 @@
-// Dados das abas de navegação
-export const tabsData = [
+const tabsData = [
     {
         key: 'drinks',
         label: 'Drinks',
@@ -13,3 +12,5 @@ export const tabsData = [
         label: 'Caiçara',
     }
 ];
+
+export default tabsData;

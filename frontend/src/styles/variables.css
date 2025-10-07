@@ -7,7 +7,10 @@
     --placeholder-bg: #f0f0f0;
     --placeholder-text: #999;
     --price-color: #1890ff;
-    --header-bg-color: darkcyan;
+    --header-bg-color: #3FB2E8;
+    --header-main-text-color: #1F164F;
+    --tabs-bg-color: #ffffff;
+    --tabs-border-color: #e8e8e8;
 
     /*Typography*/
     --price-font-weight: bold;
@@ -23,7 +26,7 @@
     --drink-card-max-width: 180px; 
 
     /* Header */
-    --header-height: 120px;
+    --header-height: 76px;
     --header-bg: #ffffff;
     --nav-height: 50px;
     --logo-section-height: 70px;

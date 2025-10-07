@@ -1,0 +1,9 @@
+.tabs-component {
+  width: 100%;
+  background-color: var(--tabs-bg-color);
+  border-bottom: 1px solid var(--tabs-border-color);
+  position: fixed;
+  top: calc(var(--header-height, 64px));
+  z-index: 900;
+  height: var(--tabs-height, 48px);
+}

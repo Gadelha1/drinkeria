@@ -1,6 +1,6 @@
 import { Button, Card, Checkbox, Divider, InputNumber } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleIngrediente, setAdicionalHortela, setQuantidade, resetCaicara } from "../../../store/CaicaraSlice";
+import { toggleIngrediente, setAdicionalHortela, setQuantidade, resetCaicara } from "../../../../store/CaicaraSlice";
 import { useEffect } from "react";
 
 const CaicaraModal = ({ data }) => {
