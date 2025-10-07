@@ -169,9 +169,6 @@
 
 .full-card-list {
   width: 100%;
-  min-height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
 }
 .full-card-list-item {
   scroll-snap-align: start;
@@ -180,6 +177,7 @@
 @media (min-width: 700px) {
   .full-drink-card {
     max-width: 400px;
+    height: max-content;
     margin: 40px auto;
     min-height: 80vh;
     border-radius: 16px;
@@ -198,15 +196,6 @@
   min-height: calc(100dvh - var(--header-height));
 }
 
-/* .app,
-.main-content,
-.full-card-list,
-.drinks-section {
-  max-width: var(--app-max-width);
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 /* Carousel: somente cores e remoção de duplicatas nas setas */
 .ant-carousel .slick-prev,
 .ant-carousel .slick-next {
@@ -218,16 +207,14 @@
   border: 0 !important;
 }
 
-/* Se algum tema estiver adicionando ::after, removemos para evitar segunda seta */
 .ant-carousel .slick-prev::after,
 .ant-carousel .slick-next::after {
   content: none !important;
 }
 
-/* Cor única das setas via ::before */
 .ant-carousel .slick-prev::before,
 .ant-carousel .slick-next::before {
-  color: #333; /* ajuste aqui a cor desejada */
+  color: #131313; 
 }
 
 /* Cores dos dots */
