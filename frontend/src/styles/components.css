@@ -173,8 +173,6 @@
 }
 .full-card-list-item {
   height: calc(100dvh - var(--header-height, 64px) - var(--tabs-height, 48px));
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
