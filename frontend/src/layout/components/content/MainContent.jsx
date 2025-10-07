@@ -64,7 +64,6 @@ const MainContent = ({ activeTab, onOpenModal }) => {
 
   return (
     <main className="main-content">
-      {/* aplica scroll somente para a aba 'caicara' */}
       <div className={`full-card-list ${activeTab === 'caicara' ? 'scrollable' : ''}`}>
         {content}
       </div>
