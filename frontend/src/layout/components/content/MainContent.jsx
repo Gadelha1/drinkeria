@@ -54,7 +54,7 @@ const MainContent = ({ activeTab, onOpenModal }) => {
     content = (
       <div className="full-card-list">
         {drinks.map((drink) => (
-          <div className="full-card-list-item" key={drink.title}>
+          <div key={drink.title} className="full-card-list-item">
             <FullCard data={drink} onSelect={onOpenModal} />
           </div>
         ))}
