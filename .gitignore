@@ -101,7 +101,8 @@ pids/
 *.seed
 *.pid.lock
 
-/.github/
+/.github/instructions
+/.github/copilot-instructions.md
 
 # Local documentation (keep local only)
 docs/
