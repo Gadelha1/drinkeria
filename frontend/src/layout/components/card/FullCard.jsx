@@ -1,4 +1,4 @@
-import { Button, Card } from "antd";
+import { Button, Card, Descriptions } from "antd";
 
 const FullCard = ({ data, onSelect }) => {
     return (
@@ -12,19 +12,31 @@ const FullCard = ({ data, onSelect }) => {
           }}
         />
         <div className="full-card-overlay" />
-        <div className="full-card-content">
           <h2 className="full-card-title">{data.title}</h2>
-          <p className="full-card-description">{data.description}</p>
-          <div className="full-card-price">{data.price}</div>
-          <Button
-            type="primary"
-            size="large"
-            className="full-card-button"
-            onClick={() => onSelect(data.modalType, data)}
-          >
-            Selecionar
-          </Button>
-        </div>
+          <div className="full-card-info">
+            <Descriptions
+              column={1}
+              bordered={false}
+              size="small"
+              className="full-card-descriptions"
+            >
+              <Descriptions.Item>
+                {data.description}
+              </Descriptions.Item>
+              <Descriptions.Item>
+                <span className="full-card-price">{data.price}</span>
+              </Descriptions.Item>
+            </Descriptions>
+
+            <Button
+              type="primary"
+              size="large"
+              className="full-card-button"
+              onClick={() => onSelect(data.modalType, data)}
+            >
+              Selecionar
+            </Button>
+          </div>
       </Card>
     );
 };
