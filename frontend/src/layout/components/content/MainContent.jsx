@@ -1,8 +1,10 @@
+import React, { useEffect, useRef } from 'react';
+import { Carousel, Row, Col, Typography } from 'antd';
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
 import { caicaraDrinks, caipirinhas, drinksProntos } from '../../../data/Drinks';
-import DrinksCarousel from '../carousel/Carousel';
-import React, { useEffect, useRef } from 'react';
+
+const { Title } = Typography;
 
 const getDrinksForTab = (tab) => {
   switch (tab) {
@@ -20,53 +22,91 @@ const getDrinksForTab = (tab) => {
 const MainContent = ({ activeTab, onOpenModal }) => {
   const drinks = getDrinksForTab(activeTab);
   const carouselRef = useRef(null);
+  const drinksSlideRef = useRef(0);
+  const caipirinhasSlideRef = useRef(0);
 
   const useCarousel = activeTab === 'drinks' || activeTab === 'caipirinhas';
+  const prevUseCarouselRef = useRef(useCarousel);
 
   useEffect(() => {
     const inst = carouselRef.current;
-    if (inst && (inst.goTo || inst.slickGoTo)) {
-      (inst.goTo || inst.slickGoTo).call(inst, 0, true);
+    if (useCarousel && !prevUseCarouselRef.current) {
+      if (activeTab === 'drinks') drinksSlideRef.current = 0;
+      if (activeTab === 'caipirinhas') caipirinhasSlideRef.current = 0;
+
+      if (inst && (inst.goTo || inst.slickGoTo)) {
+        setTimeout(() => {
+          (inst.goTo || inst.slickGoTo).call(inst, 0, true);
+        }, 0);
+      }
     }
-  }, [activeTab]);
+    prevUseCarouselRef.current = useCarousel;
+  }, [useCarousel, activeTab]);
+
+  const initialSlideForActive = () => {
+    if (activeTab === 'drinks') return drinksSlideRef.current || 0;
+    if (activeTab === 'caipirinhas') return caipirinhasSlideRef.current || 0;
+    return 0;
+  };
 
   let content;
   if (!drinks.length) {
     content = <div>Selecione uma aba</div>;
   } else if (useCarousel) {
     content = (
-      <section className="drinks-section">
-        <h3 style={{ textAlign: "center" }}>
-          {activeTab === "drinks" ? "Opções de Copão" : "Opções de Caipirinha"}
-        </h3>
-        <div className="drinks-carousel-wrapper">
-          <DrinksCarousel ref={carouselRef}>
-            {drinks.map((drink) => (
-              <div key={drink.title} className="carousel-slide">
-                <DrinkCard data={drink} onClick={onOpenModal} />
-              </div>
-            ))}
-          </DrinksCarousel>
-        </div>
-      </section>
+      <div className="drinks-section">
+        <Row justify="center">
+          <Col xs={24} sm={20} md={18} lg={14}>
+            <Title level={4} style={{ margin: '16px 0' }}>
+              {activeTab === 'drinks' ? 'Opções de Copão' : 'Opções de Caipirinha'}
+            </Title>
+
+            <Carousel
+              key={`carousel-${activeTab}`}
+              ref={carouselRef}
+              dots
+              arrows
+              infinite={false}
+              slidesToShow={1}
+              slidesToScroll={1}
+              className="drinks-carousel"
+              initialSlide={initialSlideForActive()}
+              afterChange={(current) => {
+                if (activeTab === 'drinks') drinksSlideRef.current = current;
+                if (activeTab === 'caipirinhas') caipirinhasSlideRef.current = current;
+              }}
+            >
+              {drinks.map((drink) => (
+                <div key={`${activeTab}-${drink.title}`} className="carousel-slide">
+                  <Row justify="center">
+                    <Col span={24} style={{ display: 'flex', justifyContent: 'center' }}>
+                      <DrinkCard data={drink} onClick={onOpenModal} />
+                    </Col>
+                  </Row>
+                </div>
+              ))}
+            </Carousel>
+          </Col>
+        </Row>
+      </div>
     );
   } else {
     content = (
-      <div className="full-card-list">
+      <Row justify="center" gutter={[24, 24]}>
         {drinks.map((drink) => (
-          <div key={drink.title} className="full-card-list-item">
-            <FullCard data={drink} onSelect={onOpenModal} />
-          </div>
+          <Col key={drink.title} xs={24} sm={20} md={18} lg={16}>
+            <div className="full-card-list-item">
+              <FullCard data={drink} onSelect={onOpenModal} />
+            </div>
+          </Col>
         ))}
-      </div>
+      </Row>
     );
   }
 
   return (
     <main className="main-content">
-      <div className={`full-card-list ${activeTab === 'caicara' ? 'scrollable' : ''}`}>
-        {content}
-      </div>
+      <div className={`full-card-list ${activeTab === 'caicara' ? 'scrollable' : ''}`}>{content}</div>
     </main>
   );
 };
