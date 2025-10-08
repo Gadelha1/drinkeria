@@ -1,17 +1,16 @@
 import { Button, Card, Checkbox, Divider, InputNumber } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleIngrediente, setAdicionalHortela, setQuantidade, resetCaicara } from "../../../../store/CaicaraSlice";
+import { toggleIngrediente, resetCaicara } from "../../../../store/CaicaraSlice";
 import { useEffect } from "react";
 
 const CaicaraModal = ({ data }) => {
   const dispatch = useDispatch();
-  const { removidos, adicionalHortela, quantidade } = useSelector(state => state.caicara);
+  const { removidos } = useSelector(state => state.caicara);
 
   const ingredientesFixos = data.ingredientes || [
     'Cachaça', 'Limão', 'Açúcar', 'Gelo'
   ];
 
-  // Resetar estado ao abrir o modal
   useEffect(() => {
     dispatch(resetCaicara());
   }, [dispatch, data]);
@@ -25,10 +24,11 @@ const CaicaraModal = ({ data }) => {
             value={ingredientesFixos.filter(i => !removidos.includes(i))}
             onChange={checkedList => {
               ingredientesFixos.forEach(i => {
-                if (removidos.includes(i) && checkedList.includes(i)) {
+                const currentlyChecked = !removidos.includes(i);
+                const willBeChecked = checkedList.includes(i);
+                if (currentlyChecked && !willBeChecked) {
                   dispatch(toggleIngrediente(i));
-                }
-                if (!removidos.includes(i) && !checkedList.includes(i)) {
+                } else if (!currentlyChecked && willBeChecked) {
                   dispatch(toggleIngrediente(i));
                 }
               });
@@ -38,8 +38,6 @@ const CaicaraModal = ({ data }) => {
               <Checkbox
                 key={ingrediente}
                 value={ingrediente}
-                checked={!removidos.includes(ingrediente)}
-                onChange={() => dispatch(toggleIngrediente(ingrediente))}
               >
                 {ingrediente}
               </Checkbox>
@@ -49,7 +47,7 @@ const CaicaraModal = ({ data }) => {
 
         <Divider />
 
-        <div className="selection-group">
+        {/* <div className="selection-group">
           <h4>Adicionais:</h4>
           <Checkbox
             checked={adicionalHortela}
@@ -57,9 +55,9 @@ const CaicaraModal = ({ data }) => {
           >
             🍃 Hortelã
           </Checkbox>
-        </div>
+        </div> */}
 
-        <Divider />
+        {/* <Divider />
 
         <div className="selection-group-horizontal">
           <h4>Quantidade:</h4>
@@ -70,6 +68,7 @@ const CaicaraModal = ({ data }) => {
           >
             -
           </Button>
+          
           <InputNumber
             min={1}
             max={10}
@@ -85,13 +84,13 @@ const CaicaraModal = ({ data }) => {
           >
             +
           </Button>
-        </div>
+        </div> */}
 
         <div style={{ textAlign: 'center' }}>
           <h3>Total: {data.price}</h3>
-          <Button type="primary" size="large">
+          {/* <Button type="primary" size="large">
             Adicionar ao Pedido
-          </Button>
+          </Button> */}
         </div>
       </Card>
     </div>

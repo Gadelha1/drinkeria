@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Image } from 'antd';
 const { Meta } = Card;
 
 const DrinkCard = ({ data }) => (
@@ -6,9 +6,13 @@ const DrinkCard = ({ data }) => (
     hoverable
     className="drink-card"
     cover={
-      <div className="drink-card__image-placeholder">
-        {data.title}
-      </div>
+      <Image
+        src={data.img}
+        alt={data.title}
+        preview={false}
+        className='drink-card-image'
+        style={{ objectFit: 'cover', height: 400 }}
+      />
     }
     actions={[
       <div key="price" className="drink-card-price">

@@ -1,10 +1,6 @@
 import { Card, Select, Radio, Button, Divider, InputNumber } from 'antd';
 import { useState } from 'react';
 
-/**
- * Componente para personalização de caipirinhas
- * Permite escolher base, frutas, recipiente e adicionais
- */
 const Caipirinha = ({ data }) => {
   const [quantidade, setQuantidade] = useState(1);
 

@@ -34,7 +34,7 @@ const FullCard = ({ data, onSelect }) => {
               className="full-card-button"
               onClick={() => onSelect(data.modalType, data)}
             >
-              Selecionar
+              Detalhes
             </Button>
           </div>
       </Card>
