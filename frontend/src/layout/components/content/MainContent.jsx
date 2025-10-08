@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Carousel, Row, Col, Typography } from 'antd';
 import DrinkCard from '../card/Card';
 import FullCard from '../card/FullCard';
@@ -26,22 +26,6 @@ const MainContent = ({ activeTab, onOpenModal }) => {
   const caipirinhasSlideRef = useRef(0);
 
   const useCarousel = activeTab === 'drinks' || activeTab === 'caipirinhas';
-  const prevUseCarouselRef = useRef(useCarousel);
-
-  useEffect(() => {
-    const inst = carouselRef.current;
-    if (useCarousel && !prevUseCarouselRef.current) {
-      if (activeTab === 'drinks') drinksSlideRef.current = 0;
-      if (activeTab === 'caipirinhas') caipirinhasSlideRef.current = 0;
-
-      if (inst && (inst.goTo || inst.slickGoTo)) {
-        setTimeout(() => {
-          (inst.goTo || inst.slickGoTo).call(inst, 0, true);
-        }, 0);
-      }
-    }
-    prevUseCarouselRef.current = useCarousel;
-  }, [useCarousel, activeTab]);
 
   const initialSlideForActive = () => {
     if (activeTab === 'drinks') return drinksSlideRef.current || 0;
