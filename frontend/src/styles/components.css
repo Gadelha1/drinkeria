@@ -3,14 +3,6 @@
   padding-top: calc(var(--header-height, 64px) + var(--tabs-height, 48px));
 }
 
-.drinks-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 12px;
-}
-
 .drink-card {
   width: 100% !important;
   max-width: 360px !important;
@@ -226,28 +218,11 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 700px) {
-  .full-drink-card {
-    max-width: 400px;
-    margin: 40px auto;
-    min-height: 80vh;
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  }
-  .full-drink-list {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .drinks-section {
   padding: 5px;
   min-height: calc(100dvh - var(--header-height));
 }
 
-/* essas classes removem a seta padrão que aparecia duplicada*/
 .ant-carousel .slick-prev,
 .ant-carousel .slick-next {
   font-size: 0 !important;
@@ -261,8 +236,6 @@
   content: none !important;
 }
 
-
-/* essas definem as cores das setas que são mantidas*/
 .ant-carousel .slick-prev::before,
 .ant-carousel .slick-next::before {
   color: #3fb2e8;
