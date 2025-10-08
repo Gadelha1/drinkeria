@@ -1,6 +1,7 @@
 import lemonImg from '../assets/drinks/caicara/lemon.jpeg';
 import gorilaGlueImg from '../assets/drinks/caicara/gorilaGlue.jpeg';
 import gold24k from '../assets/drinks/caicara/24k.jpeg';
+import amnesiaHaze from '../assets/drinks/caicara/amnesiaHaze.jpeg';
 import caipirihaLimao from '../assets/drinks/caipirinha/caipirinhaLimao.png';
 import caipirihaMorango from '../assets/drinks/caipirinha/caipirinhaMorango.png';
 import caipirinhaKiwi from '../assets/drinks/caipirinha/caipirinhaKiwi.png';
@@ -14,7 +15,7 @@ export const caicaraDrinks = [
     description: "Drink inspirado na OG Kush, refrescante e herbal.",
     price: "R$ 20,00",
     modalType: "caicara",
-    ingredientes: ["Cachaça", "Limão", "Açúcar", "Gelo"],
+    ingredientes: ["Gin de Maçã Verde", "Limão", "Açúcar", "Gelo"],
     img: gorilaGlueImg
   },
   {
@@ -27,11 +28,18 @@ export const caicaraDrinks = [
   },
   {
     title: "Caiçara Pineaple Express",
-    description: "Potência e sabor intenso.",
+    description: "Refrescância e sabor intenso.",
     price: "R$ 20,00",
     modalType: "caicara",
-    ingredientes: ["Cachaça", "Hortelã", "Abacaxi", "Gelo"],
+    ingredientes: ["Gin Tropical", "Hortelã", "Abacaxi", "Gelo"],
     img: gold24k
+  },{
+    title: "Caiçara Amnesia Haze",
+    description: "Potência e sabor adocicado com um leve toque de canela.",
+    price: "R$ 20,00",
+    modalType: "caicara",
+    ingredientes: ["Cachaça", "Canela", "Pêssego", "Gelo"],
+    img: amnesiaHaze
   },
   
 ];

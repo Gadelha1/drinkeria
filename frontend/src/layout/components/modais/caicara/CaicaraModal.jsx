@@ -16,8 +16,8 @@ const CaicaraModal = ({ data }) => {
   }, [dispatch, data]);
 
   return (
-    <div className="caicara-customizer">
-      <Card size="small" title="🌴 Personalize seu Drink Caiçara">
+    <div >
+      <Card size="medium" title="🌴 Remova ingredientes se preferir">
         <div className="selection-group">
           <h4>Ingredientes:</h4>
           <Checkbox.Group
