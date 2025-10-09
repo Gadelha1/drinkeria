@@ -1,4 +1,4 @@
-import { Button, Card, Descriptions } from "antd";
+import { Button, Card, Descriptions, Typography, Row } from "antd";
 
 const FullCard = ({ data, onSelect }) => {
     return (
@@ -17,16 +17,23 @@ const FullCard = ({ data, onSelect }) => {
             <Descriptions
               column={1}
               bordered={false}
-              size="small"
+              size="medium"
               className="full-card-descriptions"
             >
               <Descriptions.Item>
                 {data.description}
               </Descriptions.Item>
-              <Descriptions.Item>
-                <span className="full-card-price">{data.price}</span>
-              </Descriptions.Item>
             </Descriptions>
+
+            <Row justify="center">
+              <Typography.Title level={4} className="full-card-price" style={{ 
+                color: "var(--price-text-color)", 
+                 margin: 0,
+                 padding: 4,
+                }}>
+                {data.price}
+              </Typography.Title>
+            </Row>
 
             <Button
               type="primary"

@@ -1,0 +1,13 @@
+.drink-card {
+  width: 100% !important;
+  max-width: 360px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.drink-card__image-placeholder {
+  height: var(--drink-card-image-height);
+  background-color: var(--placeholder-bg);
+  color: var(--placeholder-text);
+}

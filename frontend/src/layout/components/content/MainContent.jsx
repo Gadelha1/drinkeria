@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Carousel, Row, Col, Typography } from 'antd';
-import DrinkCard from '../card/Card';
-import FullCard from '../card/FullCard';
+import DrinkCard from '../cards/card/Card';
+import FullCard from '../cards/fullCard/FullCard';
 import { caicaraDrinks, caipirinhas, drinksProntos } from '../../../data/Drinks';
 
 const { Title } = Typography;

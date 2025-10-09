@@ -15,6 +15,7 @@
     /*Typography*/
     --price-font-weight: bold;
     --price-font-size: 18px;
+    --price-text-color: #1890ff;
 
     /* Grid Layout */
     --cards-grid-gap: 20px;

@@ -1,4 +1,4 @@
-import { Button, Card, Checkbox, Divider, InputNumber } from "antd";
+import { Button, Card, Checkbox, Divider, InputNumber, Layout, Typography } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleIngrediente, resetCaicara } from "../../../../store/CaicaraSlice";
 import { useEffect } from "react";
@@ -16,10 +16,24 @@ const CaicaraModal = ({ data }) => {
   }, [dispatch, data]);
 
   return (
-    <div >
-      <Card size="medium" title="🌴 Remova ingredientes se preferir">
-        <div className="selection-group">
-          <h4>Ingredientes:</h4>
+      <Card 
+        size="small" 
+        title="🌴 Remova ingredientes se preferir 🌴"
+        style={{ 
+          textAlign: 'center'
+        }}
+        >
+        <Layout
+          style={{
+            background: 'transparent',
+            border: 'none',
+            padding: 2,
+            }}>
+          <Typography.Text
+            strong
+          >
+            Ingredientes:
+          </Typography.Text>
           <Checkbox.Group
             value={ingredientesFixos.filter(i => !removidos.includes(i))}
             onChange={checkedList => {
@@ -43,7 +57,7 @@ const CaicaraModal = ({ data }) => {
               </Checkbox>
             ))}
           </Checkbox.Group>
-        </div>
+        </Layout>
 
         <Divider />
 
@@ -86,14 +100,26 @@ const CaicaraModal = ({ data }) => {
           </Button>
         </div> */}
 
-        <div style={{ textAlign: 'center' }}>
-          <h3>Total: {data.price}</h3>
+        <Layout 
+          style={{ 
+            textAlign: 'center',
+            background: 'transparent',
+            height: 20,
+            justifyContent: 'center',
+            
+            }}>
+          <Typography.Title 
+            level={4}
+            strong
+            style={{ marginTop: 0 }}
+          >
+            Total: {data.price}
+          </Typography.Title>
           {/* <Button type="primary" size="large">
             Adicionar ao Pedido
           </Button> */}
-        </div>
+        </Layout>
       </Card>
-    </div>
   );
 };
 

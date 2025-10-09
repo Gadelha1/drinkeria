@@ -1,0 +1,26 @@
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+.ant-carousel .slick-prev::after,
+.ant-carousel .slick-next::after {
+  content: none !important;
+}
+
+.ant-carousel .slick-prev::before,
+.ant-carousel .slick-next::before {
+  color: #3fb2e8;
+  font-size: x-large;
+}
+
+.ant-carousel .slick-dots li button::before {
+  color: #3fb2e8;
+}
+
+.ant-carousel .slick-dots li.slick-active button::before {
+  color: #3fb2e8;
+}

@@ -1,6 +1,9 @@
 @import './variables.css';
 @import '../layout/components/header/style/header.css';
 @import '../layout/components/tabs/style/tabs.css';
+@import '../layout/components/carousel/style/carousel.css';
+@import '../layout/components/cards/fullCard/style/full-card.css';
+@import '../layout/components/cards/card/style/card.css';
 @import './components.css';
 
 /* Reset and Global Styles */
